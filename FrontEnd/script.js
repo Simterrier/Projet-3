@@ -55,6 +55,8 @@ fetch("http://localhost:5678/api/categories")
     const buttons = document.querySelectorAll(".filter-btn");
     buttons.forEach((btn) => {
       btn.addEventListener("click", () => {
+        buttons.forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
         const selectedId = btn.dataset.categoryId;
         filterProjects(selectedId);
       });
