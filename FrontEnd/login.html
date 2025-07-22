@@ -10,6 +10,7 @@
       rel="stylesheet"
     />
     <meta name="description" content="" />
+    <link rel="stylesheet" href="./assets/style.css" />
   </head>
   <body>
     <header>
@@ -18,24 +19,24 @@
         <ul>
           <li>projets</li>
           <li>contact</li>
-          <li>login</li>
+          <li><a href="/FrontEnd/login.html" class="active">Login</a></li>
           <li><img src="./assets/icons/instagram.png" alt="Instagram" /></li>
         </ul>
       </nav>
     </header>
     <main>
-      <h1>Login</h1>
+      <h2>Login</h2>
       <form class="log">
-        <label>
+        <label class="connection">
           <span>Email</span>
-          <input type="email" name="mail" value="mail" />
+          <input type="email" name="mail" id="mail" />
         </label>
-        <label>
+        <label class="connection">
           <span>Mot de passe</span>
-          <input type="text" name="password" id="password" />
+          <input type="password" name="password" id="password" />
         </label>
-        <label>
-          <button type="submit">Valider</button>
+        <label class="btnvalider">
+          <button class="valider" type="submit">Se connecter</button>
         </label>
         <label>
           <a href="#">Mot de passe oublié</a>
