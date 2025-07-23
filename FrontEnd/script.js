@@ -120,4 +120,23 @@ if (token) {
   editBtn.addEventListener("click", () => {
     alert("Ouverture de la modale a venir");
   });
+
+  const editionBanner = document.createElement("div");
+  editionBanner.id = "edition-banner";
+
+  const bannerIcon = document.createElement("img");
+  bannerIcon.src = "./assets/icons/Vector.png";
+  bannerIcon.alt = "Icone édition";
+
+  const bannerText = document.createElement("p");
+  bannerText.textContent = "Mode édition";
+
+  editionBanner.appendChild(bannerIcon);
+  editionBanner.appendChild(bannerText);
+
+  document.body.prepend(editionBanner);
+  document.body.classList.add("has-banner");
+
+  const header = document.querySelector("header");
+  header.classList.add("with-banner");
 }
