@@ -29,11 +29,16 @@
       <form class="log">
         <label class="connection">
           <span>Email</span>
-          <input type="email" name="mail" id="mail" />
+          <input type="email" name="mail" id="mail" autocomplete="email" />
         </label>
         <label class="connection">
           <span>Mot de passe</span>
-          <input type="password" name="password" id="password" />
+          <input
+            type="password"
+            name="password"
+            id="password"
+            autocomplete="current-password"
+          />
         </label>
         <label class="btnvalider">
           <button class="valider" type="submit">Se connecter</button>
@@ -50,5 +55,6 @@
         </ul>
       </nav>
     </footer>
+    <script src="/FrontEnd/login.js" defer></script>
   </body>
 </html>
