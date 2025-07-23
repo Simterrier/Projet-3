@@ -91,3 +91,33 @@ function filterProjects(categoryId) {
       });
     });
 }
+
+const token = localStorage.getItem("token");
+const loginLink = document.getElementById("login-link");
+const editBtnContainer = document.getElementById("edit-btn-container");
+
+if (token) {
+  loginLink.textContent = "Logout";
+  loginLink.href = "#";
+  loginLink.style.cursor = "pointer";
+  btnfilters.style.display = "none";
+
+  loginLink.addEventListener("click", () => {
+    localStorage.removeItem("token");
+    window.location.reload();
+  });
+
+  const editBtn = document.createElement("button");
+  editBtn.id = "edit-projects-btn";
+
+  const editIcon = document.createElement("img");
+  editIcon.src = "./assets/icons/Group.png";
+  editIcon.alt = "modifier";
+  editBtn.appendChild(editIcon);
+  editBtn.append("modifier");
+  editBtnContainer.appendChild(editBtn);
+
+  editBtn.addEventListener("click", () => {
+    alert("Ouverture de la modale a venir");
+  });
+}

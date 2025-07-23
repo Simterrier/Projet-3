@@ -124,6 +124,9 @@ li:hover {
 #portfolio h2 {
 	text-align: center;
 	margin-bottom: 1em;
+	align-items: center;
+	
+
 }
 .gallery {
 	width: 100%;
@@ -277,5 +280,36 @@ a.active {
 }
 
 footer {
-	margin-top: 359px;
+	padding-top: 331px;
+}
+
+.portfolio-header {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+}
+
+
+.portfolio-header h2 {
+	flex-grow: 1;
+	text-align: center;
+	margin: 0;
+}
+
+#edit-btn-container {
+	position: absolute;
+	right: 350px;
+	display: flex;
+	align-items: center;
+}
+
+#edit-projects-btn {
+	padding: 0;
+	background-color: white;
+	border: none;
+}
+
+img {
+    margin-right: 10px;
 }
