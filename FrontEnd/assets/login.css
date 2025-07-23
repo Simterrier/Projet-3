@@ -196,3 +196,8 @@ footer nav ul {
 img {
     margin-right: 10px;
 }
+
+form.log a {
+    text-decoration: underline;
+}
+
