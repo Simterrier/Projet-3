@@ -352,10 +352,10 @@ header.with-banner {
 
 .modal-content {
   background: white;     
-  padding: 20px;
+  padding: 20px 55px;
   border-radius: 10px;
-  width: 40%;
-  height: 65%;
+  width: 30%;
+  height: 70%;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -373,6 +373,14 @@ header.with-banner {
 
 .modal-content h3 {
 	font-size: 26px;
+	margin-top: 30px;
+	
+}
+
+.modal-footer {
+	width: 100%;
+	display: flex;
+	justify-content: center;
 }
 
 #add-photo-btn {
@@ -384,15 +392,48 @@ header.with-banner {
 	font-size: 14px;
 	height: 36px;
 	width: 50%;
-	margin-bottom: 20px;
+	position: absolute;
+	bottom: 30px;
 }
 
-.modal-gallery {
-  flex: 1; 
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
-  margin: 30px 0;
-  justify-items: center;
-  align-items: start;
+.modal-separator {
+	height: 1px;
+	width: 80%;
+	background-color: #B3B3B3;
+	position: absolute;
+	bottom: 115px;
 }
+
+
+.modal-gallery {
+  display:grid;
+  grid-template-columns: repeat(auto-fill,minmax(80px, 1fr));
+  gap: 15px;
+  margin-top: 50px ;
+  margin-bottom: 50px;
+  width: 100%;
+  justify-content: center;
+  
+}
+
+.modal-gallery figure {
+	width: 80px;
+	position: relative;
+	padding: 0;
+	
+}
+.modal-gallery img {
+	width: 100%;
+	margin: 0	;
+}
+
+.trash-icon {
+	position: absolute;
+	width: 17px;
+	height: 17px;
+	cursor: pointer;
+	top: 5px;
+	left: 25px;
+	object-fit: contain;
+}
+

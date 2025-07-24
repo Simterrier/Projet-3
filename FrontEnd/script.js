@@ -118,7 +118,7 @@ if (token) {
   editBtnContainer.appendChild(editBtn);
 
   editBtn.addEventListener("click", () => {
-    console.log("Bouton modifier cliqué");
+    // console.log("Bouton modifier cliqué");
     if (document.getElementById("modal")) return;
 
     const modal = document.createElement("div");
@@ -129,11 +129,13 @@ if (token) {
     <div class="modal-content">
       <span class="modal-close">&times;</span>
       <h3>Galerie photo</h3>
-      <div class="modal-gallery">
-      </div>
+      <div class="modal-gallery"></div>
+      <div class="modal-separator"></div>
+      <div class="modal-footer">
       <button id="add-photo-btn">Ajouter une photo</button>
       </div>
-    `;
+    </div>
+  `;
 
     document.body.appendChild(modal);
 
@@ -149,6 +151,61 @@ if (token) {
         modal.remove();
       }
     });
+
+    const moadlGallery = modal.querySelector(".modal-gallery");
+    loadModalGallery();
+
+    function loadModalGallery() {
+      fetch(works)
+        .then((res) => res.json())
+        .then((projects) => {
+          moadlGallery.innerHTML = "";
+
+          projects.forEach((project) => {
+            const figure = document.createElement("figure");
+
+            const img = document.createElement("img");
+            img.src = project.imageUrl;
+            img.alt = project.title;
+
+            const trashIcon = document.createElement("img");
+            trashIcon.src = "./assets/icons/trash.png";
+            trashIcon.alt = "Supprimer";
+            trashIcon.classList.add("trash-icon");
+
+            trashIcon.addEventListener("click", () => {
+              fetch(`${works}/${project.id}`, {
+                method: "DELETE",
+                headers: {
+                  Authorization: `Bearer ${token}`,
+                },
+              })
+                .then((res) => {
+                  if (!res.ok) {
+                    throw new Error("Erreur lors de la suppression");
+                  }
+
+                  figure.remove();
+
+                  const figures = gallery.querySelectorAll("figure");
+                  figures.forEach((fig) => {
+                    const imgE1 = fig.querySelector("img");
+                    if (imgE1.src === project.imageUrl) {
+                      fig.remove();
+                    }
+                  });
+                })
+                .catch((err) => {
+                  alert("Impossible de supprimer l'image : " + err.message);
+                });
+            });
+
+            figure.appendChild(img);
+            figure.appendChild(trashIcon);
+            moadlGallery.appendChild(figure);
+          });
+        });
+    }
   });
 
   const editionBanner = document.createElement("div");
