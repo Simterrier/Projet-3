@@ -126,6 +126,7 @@ if (token) {
     modal.classList.add("modal");
 
     modal.innerHTML = `
+   
    <div class="modal-wrapper">
     
     <div class="modal-gallery-view">
@@ -147,7 +148,7 @@ if (token) {
       <h3>Ajout photo</h3>
       <form id="add-project-form" enctype="multipart/form-data">
         <div class="form-group">
-          <label for="image">Image</label>
+          <label for="image"></label>
           <input type="file" id="image" name="image" accept="image/*" required />
         </div>
         <div class="form-group">
@@ -169,9 +170,117 @@ if (token) {
 
     modal.style.display = "flex";
 
-    const closeBtn = modal.querySelector(".modal-close");
-    closeBtn.addEventListener("click", () => {
-      modal.remove();
+    const form = modal.querySelector("#add-project-form");
+    const selectCategory = modal.querySelector("#category");
+    const galleryView = modal.querySelector(".modal-gallery-view");
+    const formView = modal.querySelector(".modal-form-view");
+    const modalGallery = modal.querySelector(".modal-gallery");
+
+    fetch("http://localhost:5678/api/categories")
+      .then((res) => res.json())
+      .then((categories) => {
+        categories.forEach((category) => {
+          const option = document.createElement("option");
+          option.value = category.id;
+          option.textContent = category.name;
+          selectCategory.appendChild(option);
+        });
+      })
+      .catch((err) => {
+        console.error("Erreur lors du chargement des categories :", err);
+      });
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      const imageInput = form.querySelector("#image");
+      const titleInput = form.querySelector("#title");
+      const categorySelect = form.querySelector("#category");
+
+      if (
+        !imageInput.files.length ||
+        !titleInput.value.trim() ||
+        !categorySelect.value
+      ) {
+        alert("Merci de remplir tous les champs correctement.");
+        return;
+      }
+
+      const formData = new FormData();
+      formData.append("image", imageInput.files[0]);
+      formData.append("title", titleInput.value.trim());
+      formData.append("category", categorySelect.value);
+
+      try {
+        const response = await fetch("http://localhost:5678/api/works", {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+          body: formData,
+        });
+
+        if (!response.ok) {
+          const errorData = await response.json();
+          alert(
+            `Erreur lors de l'envoi : ${
+              errorData.message || response.statusText
+            }`
+          );
+          return;
+        }
+
+        const newProject = await response.json();
+
+        alert("Projet ajouté avec succès !");
+
+        const figureMain = document.createElement("figure");
+        const imgMain = document.createElement("img");
+        imgMain.src = newProject.imageUrl;
+        imgMain.alt = newProject.title;
+        const captionMain = document.createElement("figcaption");
+        captionMain.textContent = newProject.title;
+        figureMain.appendChild(imgMain);
+        figureMain.appendChild(captionMain);
+        gallery.appendChild(figureMain);
+
+        const figureModal = document.createElement("figure");
+        const imgModal = document.createElement("img");
+        imgModal.src = newProject.imageUrl;
+        imgModal.alt = newProject.title;
+
+        const trashIcon = document.createElement("img");
+        trashIcon.src = "./assets/icons/trash.png";
+        trashIcon.alt = newProject.title;
+        trashIcon.classList.add("trash-icon");
+
+        trashIcon.addEventListener("click", () => {
+          fetch(`${works}/${newProject.id}`, {
+            method: "DELETE",
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          })
+            .then((res) => {
+              if (!res.ok) throw new Error("Erreur lors de la suppression");
+              figureModal.remove();
+              figureMain.remove();
+            })
+            .catch((err) =>
+              alert("Impossible de supprimer l'image : " + err.message)
+            );
+        });
+
+        figureModal.appendChild(imgModal);
+        figureModal.appendChild(trashIcon);
+        modalGallery.appendChild(figureModal);
+
+        form.reset();
+        formView.style.display = "none";
+        galleryView.style.display = "block";
+      } catch (error) {
+        alert(`Erreur reseau ou autre : ${error.message}`);
+      }
     });
 
     modal.addEventListener("click", (event) => {
@@ -180,12 +289,16 @@ if (token) {
       }
     });
 
-    const modalGallery = modal.querySelector(".modal-gallery");
+    const closeBtns = modal.querySelectorAll(".modal-close");
+    closeBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        modal.remove();
+      });
+    });
+
     loadModalGallery();
 
     const addPhotoBtn = modal.querySelector("#add-photo-btn");
-    const galleryView = modal.querySelector(".modal-gallery-view");
-    const formView = modal.querySelector(".modal-form-view");
     const backBtn = modal.querySelector(".modal-back");
 
     addPhotoBtn.addEventListener("click", () => {
