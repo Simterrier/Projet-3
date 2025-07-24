@@ -118,7 +118,37 @@ if (token) {
   editBtnContainer.appendChild(editBtn);
 
   editBtn.addEventListener("click", () => {
-    alert("Ouverture de la modale a venir");
+    console.log("Bouton modifier cliqué");
+    if (document.getElementById("modal")) return;
+
+    const modal = document.createElement("div");
+    modal.id = "modal";
+    modal.classList.add("modal");
+
+    modal.innerHTML = `
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <h3>Galerie photo</h3>
+      <div class="modal-gallery">
+      </div>
+      <button id="add-photo-btn">Ajouter une photo</button>
+      </div>
+    `;
+
+    document.body.appendChild(modal);
+
+    modal.style.display = "flex";
+
+    const closeBtn = modal.querySelector(".modal-close");
+    closeBtn.addEventListener("click", () => {
+      modal.remove();
+    });
+
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) {
+        modal.remove();
+      }
+    });
   });
 
   const editionBanner = document.createElement("div");

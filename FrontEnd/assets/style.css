@@ -339,3 +339,60 @@ header.with-banner {
 	margin-top: 100px;
 }
 
+.modal {
+  position: fixed;       
+  top: 0; left: 0;       
+  width: 100vw;
+  height: 100vh;       
+  background: #0000004D;
+  display: flex;         
+  justify-content: center;
+  align-items: center;    
+}
+
+.modal-content {
+  background: white;     
+  padding: 20px;
+  border-radius: 10px;
+  width: 40%;
+  height: 65%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.modal-content h3 {
+	font-size: 26px;
+}
+
+#add-photo-btn {
+	background-color: #1D6154;
+	color: white;
+	border-radius: 60px;
+	border: none;
+	cursor: pointer;
+	font-size: 14px;
+	height: 36px;
+	width: 50%;
+	margin-bottom: 20px;
+}
+
+.modal-gallery {
+  flex: 1; 
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin: 30px 0;
+  justify-items: center;
+  align-items: start;
+}
