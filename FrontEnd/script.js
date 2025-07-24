@@ -126,16 +126,44 @@ if (token) {
     modal.classList.add("modal");
 
     modal.innerHTML = `
-    <div class="modal-content">
+   <div class="modal-wrapper">
+    
+    <div class="modal-gallery-view">
       <span class="modal-close">&times;</span>
       <h3>Galerie photo</h3>
       <div class="modal-gallery"></div>
       <div class="modal-separator"></div>
       <div class="modal-footer">
-      <button id="add-photo-btn">Ajouter une photo</button>
+        <button id="add-photo-btn">Ajouter une photo</button>
       </div>
     </div>
-  `;
+
+    
+    <div class="modal-form-view" style="display: none;">
+      <div class="modal-header">
+        <span class="modal-back">&larr;</span>
+        <span class="modal-close">&times;</span>
+      </div>
+      <h3>Ajout photo</h3>
+      <form id="add-project-form" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="image">Image</label>
+          <input type="file" id="image" name="image" accept="image/*" required />
+        </div>
+        <div class="form-group">
+          <label for="title">Titre</label>
+          <input type="text" id="title" name="title" required />
+        </div>
+        <div class="form-group">
+          <label for="category">Catégorie</label>
+          <select id="category" name="category" required></select>
+        </div>
+        <div class="modal-separator"></div>
+        <button type="submit" id="submit-project">Valider</button>
+      </form>
+    </div>
+  </div>
+`;
 
     document.body.appendChild(modal);
 
@@ -152,14 +180,29 @@ if (token) {
       }
     });
 
-    const moadlGallery = modal.querySelector(".modal-gallery");
+    const modalGallery = modal.querySelector(".modal-gallery");
     loadModalGallery();
+
+    const addPhotoBtn = modal.querySelector("#add-photo-btn");
+    const galleryView = modal.querySelector(".modal-gallery-view");
+    const formView = modal.querySelector(".modal-form-view");
+    const backBtn = modal.querySelector(".modal-back");
+
+    addPhotoBtn.addEventListener("click", () => {
+      galleryView.style.display = "none";
+      formView.style.display = "block";
+    });
+
+    backBtn.addEventListener("click", () => {
+      formView.style.display = "none";
+      galleryView.style.display = "block";
+    });
 
     function loadModalGallery() {
       fetch(works)
         .then((res) => res.json())
         .then((projects) => {
-          moadlGallery.innerHTML = "";
+          modalGallery.innerHTML = "";
 
           projects.forEach((project) => {
             const figure = document.createElement("figure");
@@ -202,7 +245,7 @@ if (token) {
 
             figure.appendChild(img);
             figure.appendChild(trashIcon);
-            moadlGallery.appendChild(figure);
+            modalGallery.appendChild(figure);
           });
         });
     }
