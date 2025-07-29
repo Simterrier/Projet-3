@@ -44,12 +44,24 @@ fetch("http://localhost:5678/api/categories")
     allButton.classList.add("filter-btn");
     btnfilters.appendChild(allButton);
 
+    const defaultOption = document.createElement("option");
+    defaultOption.value = "";
+    defaultOption.textContent = "selectionner une categories";
+    defaultOption.disabled = true;
+    defaultOption.selected = true;
+    defaultOption.hidden = true;
+    selectCategory.appendChild(defaultOption);
+
     categories.forEach((category) => {
       const button = document.createElement("button");
       button.textContent = category.name;
       button.dataset.categoryId = category.id;
       button.classList.add("filter-btn");
       btnfilters.appendChild(button);
+
+      const option = document.createElement("option");
+      option.value = category.name;
+      selectCategory.appendChild(option);
     });
 
     const buttons = document.querySelectorAll(".filter-btn");
