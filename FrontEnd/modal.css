@@ -49,9 +49,11 @@
 }
 
 .modal-gallery-view h3,
-.modal-form-view {
+.modal-form-view h3 {
 	font-size: 26px;
 	margin-top: 30px;
+  display: flex;
+  justify-content: center;
 	
 }
 
@@ -69,9 +71,9 @@
 	cursor: pointer;
 	font-size: 14px;
 	height: 36px;
-	width: 50%;
+	width: 40%;
 	position: absolute;
-	bottom: 30px;
+	bottom: 50px;
 }
 
 .modal-separator {
@@ -126,3 +128,84 @@
 	flex-direction: column;
 }
 
+ .upload-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  gap: 10px;
+ }
+
+
+
+.upload-icon {
+  width: 16%;
+  margin: 0;
+}
+
+#image { 
+  display: none;
+}
+
+
+.upload-label {
+  background-color: #CBD6DC;
+  width: 35%;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 60px;
+  color: #306685;
+  cursor: pointer;
+}
+.upload-hint {
+  font-size: 10px;
+}
+
+#category {
+  box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.09);
+  border: none;
+  background-color: white;
+  height: 40px;
+}
+#submit-project {
+  background-color: #A7A7A7;
+  color: white;
+  border-radius: 60px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  height: 36px;
+  width: 40%;
+  position: absolute;
+  bottom: 55px;
+}
+
+
+.form-group-add {
+  background-color: #E8F1F6;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+#title {
+  box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.09);
+  border: none;
+  background-color: white;
+  height: 40px;
+}
+
+.modal-form-view h3 {
+  margin-bottom: 20px;
+}
+.form-group { 
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.form-footer {
+  display: flex;
+  justify-content: center;
+}
