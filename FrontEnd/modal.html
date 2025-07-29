@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sophie Bluel - modals</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/FrontEnd/modal.css" />
+  </head>
+  <body>
+    <div id="modal" class="modal">
+      <div class="modal-wrapper">
+        <div class="modal-gallery-view">
+          <span class="modal-close">&times;</span>
+          <h3>Galerie photo</h3>
+          <div class="modal-gallery"></div>
+          <div class="modal-separator"></div>
+          <div class="modal-footer">
+            <button id="add-photo-btn">Ajouter une photo</button>
+          </div>
+        </div>
+
+        <div class="modal-form-view" style="display: none">
+          <div class="modal-header">
+            <span class="modal-back">&larr;</span>
+            <span class="modal-close">&times;</span>
+          </div>
+          <h3>Ajout photo</h3>
+          <form id="add-project-form" enctype="multipart/form-data">
+            <div class="form-group">
+              <label for="image"></label>
+              <input
+                type="file"
+                id="image"
+                name="image"
+                accept="image/*"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="title">Titre</label>
+              <input type="text" id="title" name="title" required />
+            </div>
+            <div class="form-group">
+              <label for="category">Catégorie</label>
+              <select id="category" name="category" required></select>
+            </div>
+            <div class="modal-separator"></div>
+            <button type="submit" id="submit-project">Valider</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
