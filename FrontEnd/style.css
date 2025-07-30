@@ -48,10 +48,16 @@ table {
 }
 /** end reset css**/
 body {
-	max-width: 1140px;
 	margin:auto;
 	font-family: 'Work Sans' ;
 	font-size: 14px;
+	background-color: #FFFEF8;
+}
+
+.Content {
+	margin: auto;
+	max-width: 1140px;
+	margin-bottom: 20px;
 }
 header {
 	display: flex;
@@ -71,7 +77,7 @@ h1{
 	color: #B1663C
 }
 
-h1 > span {
+h1, span {
 	font-family: 'Work Sans';
 	font-size:10px;
 	letter-spacing: 0.1em;
@@ -183,11 +189,7 @@ input[type="submit"]{
 	border-radius: 60px ;
 }
 
-footer nav ul {
-	display: flex;
-	justify-content: flex-end;
-	margin: 2em
-}
+
 
 .filter-btn {
 	border-radius: 60px;
@@ -280,7 +282,19 @@ a.active {
 }
 
 footer {
-	margin-top: 359px;
+	
+	background-color: rgb(197, 37, 37);
+	height: 60px;
+	display: flex;
+ 	align-items: center;
+  	justify-content: flex-end;
+	
+}
+
+footer nav ul {
+	margin-right: 150px;
+
+	
 }
 
 .portfolio-header {

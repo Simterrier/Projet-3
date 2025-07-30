@@ -44,10 +44,16 @@ table {
 }
 /** end reset css**/
 body {
-	max-width: 1140px;
 	margin:auto;
 	font-family: 'Work Sans' ;
 	font-size: 14px;
+	background-color: #FFFEF8;
+}
+
+.Content {
+	margin: auto;
+	max-width: 1140px;
+	margin-bottom: 20px;
 }
 header {
 	display: flex;
@@ -199,5 +205,20 @@ img {
 
 form.log a {
     text-decoration: underline;
+}
+
+footer {
+	
+	background-color: rgb(197, 37, 37);
+	display: flex;
+ 	align-items: center;
+  	justify-content: flex-end;
+	
+	
+}
+footer nav ul {
+	margin-right: 150px;
+
+	
 }
 
