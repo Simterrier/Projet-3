@@ -58,7 +58,10 @@ body {
 header {
 	display: flex;
 	justify-content: space-between;
-	margin: 50px 0
+	margin: 50px 0;
+	margin-left: 250px;
+	margin-right: 200px;
+	align-items: center;
 }
 section {
 	margin: 50px 0
@@ -90,11 +93,12 @@ nav ul {
 	display: flex;
 	align-items: center;
 	list-style-type: none;
+	gap: 30px;
 
 }
 nav li {
 	padding: 0 10px;
-	font-size: 1.2em;
+	font-size: 16px;
 }
 
 li:hover {
@@ -102,7 +106,9 @@ li:hover {
 }
 
 
-
+nav img {
+	width: 50%;
+}
 
 
 
@@ -134,6 +140,7 @@ label.connection {
 	box-shadow: 0px 4px 14px 0px #00000017;
 	border: none;
 	height: 51px;
+	
 }
 
 button.valider {
@@ -209,7 +216,7 @@ form.log a {
 
 footer {
 	
-	background-color: rgb(197, 37, 37);
+	background-color: white;
 	display: flex;
  	align-items: center;
   	justify-content: flex-end;
