@@ -38,19 +38,25 @@
           <form id="add-project-form" enctype="multipart/form-data">
             <div class="form-group-add">
               <div class="upload-area">
-                <img
-                  src="/FrontEnd/assets/icons/picture-svgrepo-com 1.png"
-                  alt="Apercu image"
-                  class="upload-icon"
-                />
-                <label for="image" class="upload-label">+ Ajouter photo</label>
-                <p class="upload-hint">jpg, png : 4mo max</p>
+                <div class="upload-placeholder">
+                  <img
+                    src="/FrontEnd/assets/icons/picture-svgrepo-com 1.png"
+                    alt="Apercu image"
+                    class="upload-icon"
+                  />
+                  <label for="image" class="upload-label"
+                    >+ Ajouter photo</label
+                  >
+                  <p class="upload-hint">jpg, png : 4mo max</p>
+                </div>
+                <div class="upload-preview" style="display: none"></div>
                 <input
                   type="file"
                   id="image"
                   name="image"
                   accept="image/*"
                   required
+                  hidden
                 />
               </div>
             </div>
@@ -64,7 +70,7 @@
             </div>
             <div class="modal-separator"></div>
             <div class="form-footer">
-              <button type="submit" id="submit-project">Valider</button>
+              <button type="submit" id="submit-btn">Valider</button>
             </div>
           </form>
         </div>
