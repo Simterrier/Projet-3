@@ -223,7 +223,7 @@ if (token) {
     // Option par defaut dans le select
     const defaultOption = document.createElement("option");
     defaultOption.value = "";
-    defaultOption.textContent = "selectionner une categories";
+    defaultOption.textContent = "";
     defaultOption.disabled = true;
     defaultOption.selected = true;
     defaultOption.hidden = true;
