@@ -62,8 +62,17 @@ body {
 header {
 	display: flex;
 	justify-content: space-between;
-	margin: 50px 0
+	margin: 50px 0;
+	margin-left: 250px;
+	margin-right: 200px;
+	align-items: center;
 }
+
+nav img {
+	width: 50%;
+}
+
+
 section {
 	margin: 50px 0
 }
@@ -77,11 +86,11 @@ h1{
 	color: #B1663C
 }
 
-h1, span {
+h1 span {
 	font-family: 'Work Sans';
 	font-size:10px;
 	letter-spacing: 0.1em;
-;
+
 }
 
 h2{
@@ -94,6 +103,7 @@ nav ul {
 	display: flex;
 	align-items: center;
 	list-style-type: none;
+	gap: 30px;
 
 }
 nav li {
@@ -107,18 +117,25 @@ li:hover {
 #introduction {
 	display: flex;
 	align-items: center;
+	justify-content: space-between;
+	margin: 150px 0;
+	
+	
 }
 #introduction figure {
-	flex: 1
+	width: 50%;
+	
 }
 #introduction img {
 	display: block;
-	margin: auto;
-	width: 80%;
+	width: 100%;
 }
 
 #introduction article {
-	flex: 1
+	width: 36%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
 }
 #introduction h2 {
 	margin-bottom: 1em;
@@ -129,8 +146,9 @@ li:hover {
 }
 #portfolio h2 {
 	text-align: center;
-	margin-bottom: 1em;
+	
 	align-items: center;
+	margin-bottom: 60px;
 	
 
 }
@@ -165,10 +183,11 @@ margin: auto;
 }
 
 #contact input {
-	height: 50px;
+	height: 40px;
 	font-size: 1.2em;
 	border: none;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+	
 }
 #contact label {
 	margin: 2em 0 1em 0;
@@ -194,19 +213,22 @@ input[type="submit"]{
 .filter-btn {
 	border-radius: 60px;
 	background-color: white;
-	border-color: #1D6154;
+	border:1px solid #1D6154;
 	color: #1D6154;
 	height: 37px;
 	font-size: 16px;
 	padding-left: 30px;
 	padding-right: 30px;
+	
+	
+
 }
 
 #filters {
 	display: flex;
 	justify-content: center;
-	margin-bottom: 30px;
-	gap: 30px;
+	margin-bottom: 50px;
+	gap: 20px;
 	
 }
 
@@ -283,7 +305,7 @@ a.active {
 
 footer {
 	
-	background-color: rgb(197, 37, 37);
+	background-color: white;
 	height: 60px;
 	display: flex;
  	align-items: center;
@@ -324,9 +346,7 @@ footer nav ul {
 	border: none;
 }
 
-img {
-    margin-right: 10px;
-}
+
 
 
 #edition-banner {
