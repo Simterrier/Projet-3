@@ -169,7 +169,7 @@ if (token) {
     const selectCategory = modal.querySelector("#category");
     const imageInput = form.querySelector("#image");
     const titleInput = form.querySelector("#title");
-    const submitBtn = form.querySelector("#submit-btn");
+    const submitBtn = form.querySelector("#submit-project");
     const uploadPreviewContainer = form.querySelector(".upload-preview");
     const uploadPlaceholder = form.querySelector(".upload-placeholder");
 
@@ -183,6 +183,8 @@ if (token) {
       reader.onload = function (e) {
         // cacher par defaut
         uploadPlaceholder.style.display = "none";
+
+        uploadPreviewContainer.style.display = "flex";
 
         // affichage
         uploadPreviewContainer.innerHTML = "";

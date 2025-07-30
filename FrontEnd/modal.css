@@ -118,6 +118,17 @@
 	object-fit: contain;
 }
 
+
+
+
+
+
+
+
+
+
+
+
 .modal-back {
 	cursor: pointer;
 	user-select: none;
@@ -128,8 +139,10 @@
 	flex-direction: column;
 }
 
- .upload-area {
-  display: flex;
+
+ .upload-placeholder {
+  width: 100%;
+   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -138,6 +151,17 @@
   gap: 10px;
  }
 
+.upload-preview {
+  width: 100%;
+  justify-content: center;
+}
+
+
+.preview-img {
+  width: 25%;
+  
+  
+}
 
 
 .upload-icon {
@@ -171,7 +195,7 @@
   background-color: white;
   height: 40px;
 }
-#submit-btn {
+#submit-project {
   background-color: #A7A7A7;
   color: white;
   border-radius: 60px;
@@ -184,11 +208,14 @@
   bottom: 55px;
 }
 
+#submit-project.active {
+  background-color: #1D6154;
+}
+
 
 .form-group-add {
   background-color: #E8F1F6;
-  padding-bottom: 10px;
-  padding-top: 10px;
+ 
 }
 #title {
   box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.09);
