@@ -48,14 +48,21 @@
   cursor: pointer;
 }
 
-.modal-gallery-view h3,
-.modal-form-view h3 {
+.modal-gallery-view h3 {
 	font-size: 26px;
 	margin-top: 30px;
   display: flex;
   justify-content: center;
 	
 }
+
+.modal-form-view h3 {
+  font-size: 26px;
+	margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
 
 .modal-footer {
 	width: 100%;
@@ -155,6 +162,7 @@
 .upload-preview {
   width: 100%;
   justify-content: center;
+  height: 190px;
 }
 
 
