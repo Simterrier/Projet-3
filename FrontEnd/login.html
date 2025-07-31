@@ -18,17 +18,21 @@
       <h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
       <nav>
         <ul>
-          <li>projets</li>
-          <li>contact</li>
+          <li><a href="#portfolio">projets</a></li>
+          <li><a href="#contact">contact</a></li>
           <li><a href="/FrontEnd/login.html" class="active">Login</a></li>
-          <li><img src="./assets/icons/instagram.png" alt="Instagram" /></li>
+          <li>
+            <a href="#" target="blanck"
+              ><img src="./assets/icons/instagram.png" alt="Instagram"
+            /></a>
+          </li>
         </ul>
       </nav>
     </header>
     <div class="Content">
       <main>
         <h2>Log In</h2>
-        <form class="log">
+        <form class="log" method="post">
           <label class="connection">
             <span>Email</span>
             <input type="email" name="mail" id="mail" autocomplete="email" />
@@ -42,9 +46,9 @@
               autocomplete="current-password"
             />
           </label>
-          <label class="btnvalider">
-            <button class="valider" type="submit">Se connecter</button>
-          </label>
+
+          <button class="valider" type="submit">Se connecter</button>
+
           <label>
             <a href="#">Mot de passe oublié</a>
           </label>

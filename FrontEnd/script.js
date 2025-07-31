@@ -115,7 +115,7 @@ if (token) {
   });
 
   //   cacher les filtres
-  btnfilters.style.display = "none";
+  btnfilters.classList.add("hidden");
 
   // Bandeau d'édition
 
@@ -254,13 +254,13 @@ if (token) {
 
     // naviagtion entre Modales
     addPhotoBtn.addEventListener("click", () => {
-      galleryView.style.display = "none";
-      formView.style.display = "block";
+      galleryView.classList.add("hidden");
+      formView.classList.remove("hidden");
     });
 
     backBtn.addEventListener("click", () => {
-      formView.style.display = "none";
-      galleryView.style.display = "block";
+      formView.classList.add("hidden");
+      galleryView.classList.remove("hidden");
     });
 
     // Chargement de la gallery dans la modal
@@ -397,8 +397,8 @@ if (token) {
         // Réinitialiser le formulaire
         form.reset();
         uploadPreviewContainer.innerHTML = "";
-        uploadPreviewContainer.style.display = "none";
-        uploadPlaceholder.style.display = "flex";
+        uploadPreviewContainer.classList.add("hidden");
+        uploadPlaceholder.classList.remove("hidden");
         submitBtn.disabled = true;
         submitBtn.classList.remove("active");
 

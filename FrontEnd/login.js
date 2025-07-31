@@ -32,8 +32,6 @@ loginForm.addEventListener("submit", function (event) {
         const errorMsg = document.createElement("p");
         errorMsg.textContent = "Erreur : email ou mot de passe incorrect.";
         errorMsg.classList.add("error-message");
-        errorMsg.style.color = "red";
-        errorMsg.style.textAlign = "center";
         loginForm.appendChild(errorMsg);
       }
     });

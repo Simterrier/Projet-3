@@ -40,6 +40,10 @@
   
 }
 
+.upload-placeholder {
+  display: flex;
+}
+
 .modal-close {
   position: absolute;
   top: 20px;
@@ -131,7 +135,9 @@
 
 
 
-
+.hidden {
+  display: none;
+}
 
 
 
@@ -163,6 +169,7 @@
 .upload-preview {
   width: 100%;
   justify-content: center;
+  display: flex;
   height: 190px;
 }
 

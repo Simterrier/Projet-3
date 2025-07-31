@@ -43,6 +43,10 @@ table {
 	border-spacing: 0;
 }
 /** end reset css**/
+
+
+
+
 body {
 	margin:auto;
 	font-family: 'Work Sans' ;
@@ -58,9 +62,7 @@ body {
 header {
 	display: flex;
 	justify-content: space-between;
-	margin: 50px 0;
-	margin-left: 250px;
-	margin-right: 200px;
+	margin: 50px 200px 0px 200px;
 	align-items: center;
 }
 section {
@@ -80,14 +82,17 @@ h1 > span {
 	font-family: 'Work Sans';
 	font-size:10px;
 	letter-spacing: 0.1em;
-;
+
 }
 
-h2{
+h2 {
 	font-family: 'Syne';
 	font-weight: 700;
 	font-size: 30px;
-	color: #1D6154
+	color: #1D6154;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 20px;
 }
 nav ul {
 	display: flex;
@@ -114,11 +119,6 @@ nav img {
 
 
 
-h2 {
-	display: flex;
-	justify-content: center;
-	margin-bottom: 20px;
-}
 
 form.log {
 	display: flex;
@@ -176,7 +176,8 @@ a.active {
 footer nav ul {
 	display: flex;
 	justify-content: flex-end;
-	margin: 2em
+	margin: 2em;
+	margin-right: 150px;
 }
 
 .portfolio-header {
@@ -206,7 +207,7 @@ footer nav ul {
 	border: none;
 }
 
-img {
+#edit-projects-btn img {
     margin-right: 10px;
 }
 
@@ -223,9 +224,10 @@ footer {
 	
 	
 }
-footer nav ul {
-	margin-right: 150px;
 
-	
+
+.error-message {
+	color: red;
+	text-align: center;
 }
 
