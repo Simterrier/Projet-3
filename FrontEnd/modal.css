@@ -235,7 +235,7 @@
   color: white;
   border-radius: 60px;
   border: none;
-  cursor: pointer;
+  cursor: not-allowed;
   font-size: 14px;
   height: 36px;
   width: 40%;
@@ -243,8 +243,11 @@
   bottom: 55px;
 }
 
-.active {
+
+
+#submit-project.active {
   background-color: #1D6154;
+  cursor: pointer;
 }
 
 
