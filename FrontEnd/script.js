@@ -99,7 +99,10 @@ function filterProjects(categoryId) {
 }
 
 loadProjects();
-loadFilters();
+
+if (!token) {
+  loadFilters();
+}
 
 // ================= ADMIN =================
 
@@ -113,9 +116,6 @@ if (token) {
     localStorage.removeItem("token");
     window.location.reload();
   });
-
-  //   cacher les filtres
-  btnfilters.classList.add("hidden");
 
   // Bandeau d'édition
 
