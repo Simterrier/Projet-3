@@ -108,7 +108,7 @@ if (token) {
 
   loginLink.textContent = "Logout";
   loginLink.href = "#";
-  loginLink.style.cursor = "pointer";
+  loginLink.classList.add("logout-pointer");
   loginLink.addEventListener("click", () => {
     localStorage.removeItem("token");
     window.location.reload();
@@ -182,9 +182,9 @@ if (token) {
       const reader = new FileReader();
       reader.onload = function (e) {
         // cacher par defaut
-        uploadPlaceholder.style.display = "none";
+        uploadPlaceholder.classList.add("hidden");
 
-        uploadPreviewContainer.style.display = "flex";
+        uploadPreviewContainer.classList.add("visible");
 
         // affichage
         uploadPreviewContainer.innerHTML = "";
@@ -403,8 +403,8 @@ if (token) {
         submitBtn.classList.remove("active");
 
         // Retour à la vue galerie dans la modale
-        formView.style.display = "none";
-        galleryView.style.display = "block";
+        formView.classList.add("hidden");
+        galleryView.classList.remove("hidden");
       } catch (error) {
         alert(`Erreur réseau ou autre : ${error.message}`);
       }

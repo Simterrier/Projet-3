@@ -47,6 +47,12 @@ table {
 	border-spacing: 0;
 }
 /** end reset css**/
+
+.logout-pointer {
+	cursor: pointer;
+}
+
+
 body {
 	margin:auto;
 	font-family: 'Work Sans' ;
