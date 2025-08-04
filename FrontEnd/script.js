@@ -1,5 +1,5 @@
 // script.js
-const works = "http://localhost:5678/api/works";
+const works = `${API_BASE}/works`;
 const gallery = document.querySelector(".gallery");
 const btnfilters = document.getElementById("filters");
 const loginLink = document.getElementById("login-link");
@@ -41,7 +41,7 @@ function loadProjects() {
 
 // Chargement des filtres
 function loadFilters() {
-  fetch("http://localhost:5678/api/categories")
+  fetch(`${API_BASE}/categories`)
     .then((res) => res.json())
     .then((categories) => {
       const allButton = document.createElement("button");
@@ -230,7 +230,7 @@ if (token) {
     selectCategory.appendChild(defaultOption);
 
     // Charger categories dynamiquement
-    fetch("http://localhost:5678/api/categories")
+    fetch(`${API_BASE}/categories`)
       .then((res) => res.json())
       .then((categories) => {
         categories.forEach((category) => {
@@ -333,7 +333,7 @@ if (token) {
       formData.append("category", categorySelect.value);
 
       try {
-        const response = await fetch("http://localhost:5678/api/works", {
+        const response = await fetch(`${API_BASE}/works`, {
           method: "POST",
           headers: { Authorization: `Bearer ${token}` },
           body: formData,

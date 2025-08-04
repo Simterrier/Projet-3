@@ -7,7 +7,7 @@ loginForm.addEventListener("submit", function (event) {
   const email = document.getElementById("mail").value;
   const password = document.getElementById("password").value;
 
-  fetch("http://localhost:5678/api/users/login", {
+  fetch(`${API_BASE}/users/login`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
