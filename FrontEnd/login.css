@@ -45,8 +45,6 @@ table {
 /** end reset css**/
 
 
-
-
 body {
 	margin:auto;
 	font-family: 'Work Sans' ;
@@ -54,11 +52,6 @@ body {
 	background-color: #FFFEF8;
 }
 
-.Content {
-	margin: auto;
-	max-width: 1140px;
-	margin-bottom: 20px;
-}
 header {
 	display: flex;
 	justify-content: center;
@@ -66,9 +59,6 @@ header {
 	align-items: center;
 	gap: 800px;
 	margin-bottom: 42px;
-}
-section {
-	margin: 50px 0
 }
 
 h1{
@@ -84,7 +74,46 @@ h1 > span {
 	font-family: 'Work Sans';
 	font-size:10px;
 	letter-spacing: 0.1em;
+}
 
+a {
+	text-decoration: none;
+	color: black;
+}
+
+a:hover {
+	color: #B1663C;
+}
+
+a.active {
+	font-weight: bold;
+}
+
+nav ul {
+	display: flex;
+	align-items: center;
+	list-style-type: none;
+	gap: 30px;
+
+}
+
+nav li {
+	padding: 0 10px;
+	font-size: 16px;
+}
+
+li:hover {
+	color: #B1663C;
+}
+
+nav img {
+	width: 50%;
+}
+
+.Content {
+	margin: auto;
+	max-width: 1140px;
+	margin-bottom: 20px;
 }
 
 h2 {
@@ -96,31 +125,6 @@ h2 {
 	justify-content: center;
 	margin-bottom: 20px;
 }
-nav ul {
-	display: flex;
-	align-items: center;
-	list-style-type: none;
-	gap: 30px;
-
-}
-nav li {
-	padding: 0 10px;
-	font-size: 16px;
-}
-
-li:hover {
-	color: #B1663C;
-}
-
-
-nav img {
-	width: 50%;
-}
-
-
-
-
-
 
 form.log {
 	display: flex;
@@ -142,7 +146,6 @@ label.connection {
 	box-shadow: 0px 4px 14px 0px #00000017;
 	border: none;
 	height: 51px;
-	
 }
 
 button.valider {
@@ -152,28 +155,23 @@ button.valider {
 	border: none;
 	background-color: #1D6154;
 	color: white;
-	
 }
 
-label.btnvalider {
-	width: 100%;
+form.log a {
+    text-decoration: underline;
+}
+
+.error-message {
+	color: red;
+	text-align: center;
+}
+
+footer {
+	background-color: white;
 	display: flex;
-	justify-content: center;
+ 	align-items: center;
+  	justify-content: flex-end;
 }
-
-a {
-	text-decoration: none;
-	color: black;
-}
-
-a:hover {
-	color: #B1663C;
-}
-
-a.active {
-	font-weight: bold;
-}
-
 
 footer nav ul {
 	display: flex;
@@ -182,54 +180,5 @@ footer nav ul {
 	margin-right: 150px;
 }
 
-.portfolio-header {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	position: relative;
-}
 
-
-.portfolio-header h2 {
-	flex-grow: 1;
-	text-align: center;
-	margin: 0;
-}
-
-#edit-btn-container {
-	position: absolute;
-	right: 350px;
-	display: flex;
-	align-items: center;
-}
-
-#edit-projects-btn {
-	padding: 0;
-	background-color: white;
-	border: none;
-}
-
-#edit-projects-btn img {
-    margin-right: 10px;
-}
-
-form.log a {
-    text-decoration: underline;
-}
-
-footer {
-	
-	background-color: white;
-	display: flex;
- 	align-items: center;
-  	justify-content: flex-end;
-	
-	
-}
-
-
-.error-message {
-	color: red;
-	text-align: center;
-}
 
