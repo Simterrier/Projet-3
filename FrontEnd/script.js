@@ -274,6 +274,7 @@ if (token) {
             const img = document.createElement("img");
             img.src = project.imageUrl;
             img.alt = project.title;
+            img.classList.add("gallery-img");
 
             const trashIcon = document.createElement("img");
             trashIcon.src = "./assets/icons/trash.png";
@@ -369,6 +370,7 @@ if (token) {
         const imgModal = document.createElement("img");
         imgModal.src = newProject.imageUrl;
         imgModal.alt = newProject.title;
+        imgModal.classList.add("gallery-img");
 
         const trashIcon = document.createElement("img");
         trashIcon.src = "./assets/icons/trash.png";
