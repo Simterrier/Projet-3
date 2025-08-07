@@ -183,10 +183,8 @@ if (token) {
       reader.onload = function (e) {
         // cacher par defaut
         uploadPlaceholder.classList.add("hidden");
-
-        uploadPreviewContainer.classList.add("visible");
-
         // affichage
+        uploadPreviewContainer.classList.add("visible");
         uploadPreviewContainer.innerHTML = "";
         const previewImg = document.createElement("img");
         previewImg.src = e.target.result;
